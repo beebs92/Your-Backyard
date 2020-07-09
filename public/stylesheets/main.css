@@ -68,3 +68,9 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+/* Google Maps */
+#map {
+    height: 400px;
+    width: 100%;
+}

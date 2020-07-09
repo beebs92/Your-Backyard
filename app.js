@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var express     	= require("express"),
     app         	= express(),
     bodyParser  	= require("body-parser"),
@@ -19,15 +21,10 @@ var commentRoutes 		= require("./routes/comments"),
 // var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp"
 // mongoose.connect(url);
 
-mongoose.connect("mongodb://localhost/yelp_camp", {
+mongoose.connect(process.env.DATABASEURL, {
 	useUnifiedTopology: true, 
 	useNewUrlParser: true,
 });
-
-// mongoose.connect(process.env.DATABASEURL, {
-// 	useUnifiedTopology: true, 
-// 	useNewUrlParser: true,
-// });
 
 
 app.use(bodyParser.urlencoded({extended: true}));
