@@ -7,6 +7,12 @@ var async = require("async");
 var nodemailer = require("nodemailer");
 var crypto = require("crypto");
 
+// Set your secret key. Remember to switch to your live secret key in production!
+// See your keys here: https://dashboard.stripe.com/account/apikeys
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+
+
+
 
 //Root route
 router.get("/", function(req, res) {
@@ -43,6 +49,8 @@ router.post("/register", function(req, res) {
         });
     });
 });
+
+
 
 //show login form
 router.get("/login", function(req, res) {
@@ -198,5 +206,6 @@ router.get("/users/:id", function(req, res) {
         });
     });
 });
+
 
 module.exports = router;

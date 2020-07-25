@@ -1,4 +1,5 @@
 <%- include("../partials/header") %>
+<main>
 <div class="container">
    <div class="row">
       <div class="col-md-3">
@@ -10,8 +11,12 @@
             <img class="card-img-top" src="<%= campground.image %>" alt="<%= campground.name %>">
             <div class="card-body">
               <h4 class="float-right">
-          		$<%= campground.price %>/night
+          		Price: <%= campground.price %>/night
         		</h4>
+				<h4>
+					<%= campground.place %>
+				</h4>
+				<hr>
                <h5 class="card-title"><%= campground.name %></h5>
                <p>
                   <em>Submitted by: <a href="/users/<%= campground.author.id %>"><%= campground.author.username %></a></em>
@@ -61,6 +66,7 @@
       </div>
    </div>
 </div>
+	</main>
 <script>
    function initMap() {
      var lat = <%= campground.lat %>;

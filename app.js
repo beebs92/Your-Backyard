@@ -10,8 +10,7 @@ var express     	= require("express"),
 	methodOverride	= require("method-override"),
     Campground  	= require("./models/campground"),
 	Comment			= require("./models/comment"),
-	User			= require("./models/user"),
-    seedDB      	= require("./seeds");
+	User			= require("./models/user");
 
 //Requiring routes
 var commentRoutes 		= require("./routes/comments"),
@@ -32,7 +31,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
-// seedDB(); //seed the database
+
 
 //===============
 //PASSPORT CONFIG
